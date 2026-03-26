@@ -32,7 +32,7 @@ function LoginPage() {
 
     
   return (
-    <div >
+    <div style={{height:"100vh"}}>
        <h2 className='text-center mt-5' style={{color:"#067594"}}>Welcome <span className='ms-3'>{user.name}</span> </h2> 
        <div className="d-flex flex-wrap justify-content-center gap-4 mt-5">
       {userBookings.length>0 ?(
