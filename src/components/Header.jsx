@@ -6,12 +6,13 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import { MdTravelExplore } from "react-icons/md";
+
 
 
 
@@ -90,11 +91,11 @@ function Header() {
               color: "rgb(47,106,127)",
             }}
           >
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">Destinations</Button>
-            <Button color="inherit">Services</Button>
-            <Button color="inherit">Reviews</Button>
-            <Button color="inherit">Contact</Button>
+            <Link to="/" color="inherit" className="text-decoration-none" style={{color:"rgb(47,106,127)"}}>Home</Link>
+            <Link to="destinations" color="inherit" className="text-decoration-none" style={{color:"rgb(47,106,127)"}}>Destinations</Link>
+            <Link to="services" color="inherit" style={{color:"rgb(47,106,127)"}} className="text-decoration-none">Services</Link>
+            <Link to="reviews" style={{color:"rgb(47,106,127)"}} color="inherit" className="text-decoration-none">Reviews</Link>
+           
           </Box>
 
           {/* Mobile  Icon */}
@@ -115,7 +116,7 @@ function Header() {
             <MenuItem onClick={handleMenuClose}>Destinations</MenuItem>
             <MenuItem onClick={handleMenuClose}>Services</MenuItem>
             <MenuItem onClick={handleMenuClose}>Reviews</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+           
             <MenuItem onClick={() => { handleMenuClose(); handleOpen(); }}>
               Login
             </MenuItem>

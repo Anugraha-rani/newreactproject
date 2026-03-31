@@ -14,6 +14,13 @@ import MachuPicchu from './details/MachuPicchu'
 import Guana from './details/Guana'
 import Cinque from './details/Cinque'
 import BookNow1 from './pages/BookNow1'
+import Destinations from './pages/Destinations'
+import Services from './pages/Services'
+import Reviews from './pages/Reviews'
+
+
+
+
 
 
 function App() {
@@ -35,6 +42,10 @@ function App() {
 <Route path='guana' element={<Guana/>}/>
 <Route path='cinque' element={<Cinque/>}/>
 <Route path='book1' element={<BookNow1/>}/>
+<Route path='destinations' element={<Destinations/>}/>
+<Route path='services' element={<Services/>}/>
+<Route path='reviews' element={<Reviews/>}/>
+
 
 </Routes>
       <Footer/>

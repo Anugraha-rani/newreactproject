@@ -1,11 +1,13 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import api from '../api'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
+
 function LoginPage() {
     const location = useLocation()
+    const navigate=useNavigate()
     const [userBookings, setUserBookings] = useState([])
     const user= location.state
     const mail= user.email
@@ -28,12 +30,18 @@ function LoginPage() {
 
     fetchBookings();
   }, [mail]);
-
+const logoutClick=()=>{
+  alert("You have successfully logged out")
+  navigate("/")
+}
 
     
   return (
     <div style={{height:"100vh"}}>
-       <h2 className='text-center mt-5' style={{color:"#067594"}}>Welcome <span className='ms-3'>{user.name}</span> </h2> 
+    <div className='d-flex justify-content-between p-5'>
+       <h2 className='text-center ' style={{color:"#067594"}}>Welcome <span className='ms-3'>{user.name}</span> </h2> 
+       <button className='btn ' onClick={logoutClick} style={{backgroundColor:"#067594",color:"white"}}>Logout</button>
+       </div>
        <div className="d-flex flex-wrap justify-content-center gap-4 mt-5">
       {userBookings.length>0 ?(
         userBookings.map((item,index)=>(
